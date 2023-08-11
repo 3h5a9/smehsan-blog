@@ -9,8 +9,8 @@ import Image from 'next/image'
 const MAX_DISPLAY = 5
 
 const links = [
-  { name: 'Ruby on Rail' },
-  { name: 'WordPress' }
+  { name: 'Ruby on Rail', href: '#' },
+  { name: 'WordPress', href: '#' },
 ]
 
 export default function Home({ posts }) {
@@ -18,7 +18,13 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="relative isolate overflow-hidden bg-gray-900 py-2 sm:py-12">
-
+          <Image
+            src={'/static/images/ruby_on_rails.webp'}
+            className='absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center'
+            alt='Ruby on Rail - Image Credit Shakuro.com'
+            width="1024"
+            height="312"
+          />
           <div
             className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
             aria-hidden="true"
@@ -53,9 +59,9 @@ export default function Home({ posts }) {
             <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
                 {links.map((link) => (
-                  <p key={link.name}>
+                  <a key={link.name} href={link.href}>
                     {link.name} <span aria-hidden="true">&rarr;</span>
-                  </p>
+                  </a>
                 ))}
               </div>
             </div>
@@ -64,7 +70,7 @@ export default function Home({ posts }) {
 
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest From My Blog
+            Latest from Blog
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
