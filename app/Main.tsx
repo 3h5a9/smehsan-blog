@@ -9,8 +9,8 @@ import Image from 'next/image'
 const MAX_DISPLAY = 5
 
 const links = [
-  { name: 'Ruby on Rail', href: '#' },
-  { name: 'WordPress', href: '#' },
+  { name: 'Ruby on Rail' },
+  { name: 'WordPress' }
 ]
 
 export default function Home({ posts }) {
