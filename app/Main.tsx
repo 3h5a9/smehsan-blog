@@ -18,13 +18,7 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="relative isolate overflow-hidden bg-gray-900 py-2 sm:py-12">
-          <Image
-            src={'/static/images/ruby_on_rails.webp'}
-            className='absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center'
-            alt='Ruby on Rail - Image Credit Shakuro.com'
-            width="1024"
-            height="312"
-          />
+
           <div
             className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
             aria-hidden="true"
