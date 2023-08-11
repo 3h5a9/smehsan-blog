@@ -9,7 +9,7 @@
 There are times when we need to change the git commit message, some times, after push and some times before push. This is happen when we make a typo in the message or want to remove some info from the message. We can change those commit message in different way depending upon the situation. Leyt's Move on.
 
 
-## Change the most recent / Last commit
+## Rename unpushed most recent / Last commit message 
 To make change in the last or most recent commit run the following command in the terminal.
 
 ```jsx
@@ -29,3 +29,18 @@ git commit -amend -m "Your message"
 
 write this command and within the quote add your new message. This will replace the old message with the new one.
 
+
+## Rename pushed commit message
+Although it is not recommended to rename the pushed commit message, as it might cause some problem. But if we need to make change in the last or most recent pushed commit message we can use the following command.
+
+```jsx
+git commit --amend -m "New commit message."
+```
+now push to update the history of the repository with the following command.
+
+```jsx
+git push --force <remoteName> <branchName>
+```
+
+
+Thank you
