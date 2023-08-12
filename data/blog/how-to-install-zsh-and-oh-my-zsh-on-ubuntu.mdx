@@ -1,0 +1,105 @@
+---
+title: 'How to install zsh and oh my zsh on ubuntu' 
+date: '2023-08-12'
+tags: ['Ubuntu', Tutorial]
+Author: 'SM Ehsan'
+draft: false
+summary: 'In this article we are going to install zsh and oh my zsh into our linux machine. In my case, I am using Ubuntu 23.04'.
+---
+In this article we are going to install zsh and oh my zsh into our linux machine. In my case, I am using Ubuntu 23.04.
+
+## Check and Install Git
+at first we have to check for git, if git is not installed, then run the following command to install git in our machine.
+
+```jsx
+sudo apt install git
+```
+This command will install git into the machine and then we can move farther.
+
+
+## Install zsh
+
+```jsx
+sudo apt install zsh
+```
+
+after completion of zsh type the following command to check the installed zsh version in your machine.
+
+```jsx
+zsh --version
+```
+
+now before install oh my zsh into our machine, lets check whether there is curl is already installed or not.
+
+run the following command to check the curl version.
+```jsx
+curl --version
+```
+
+if curl is not installed, the command will through the following info to us.
+
+Command `curl` not found, but can be installed with:
+to install `curl` we have to run the following command in our terminal.
+
+```jsx
+sudo apt install curl
+```
+
+and after completion of CURL installation, we can check the installation by the check the version of curl.
+
+```jsx
+curl --version
+```
+
+now we are going to install oh-my-zsh in our machine by the following command.
+
+```jsx
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+this command will clone the oh-my-zsh git into your machine and then will ask you, if you want to change your default shell to zsh or not. we have to press 'Y' and then enter. this step require your sudo password. enter your password and all done. you will see oh-my-zsh screen in your terminal.
+
+install power10k theme for oh myzsh clone the git repo
+
+```jsx
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+after cloning, chenge the default zsh theme from .zshrc file. run the following command to edit the zshrc file
+
+
+```jsx
+nano ~/.zshrc
+```
+and change the default theme to powerlevel10k
+
+```jsx
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+now run the following command to source the zsh
+
+```jsx
+source ~/.zshrc
+```
+this will prompt the configaration process. answer the questions.
+
+be sure to install nerd font before this process. 
+[https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads)
+
+it's all done, logout from your machine and login. now you can use oh-my-zsh.
+
+install plugin zsh autosuggestion run the following command to clone the repo
+
+```jsx
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+add the plugin to .zshrc file in plugin section zsh-autosuggestions
+
+and then source the .zshrc file
+
+```jsx
+source ~/.zshrc
+```
+not we can use the auto suggestions plugin in our terminal.
+
+
