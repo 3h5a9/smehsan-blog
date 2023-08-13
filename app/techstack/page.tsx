@@ -19,7 +19,6 @@ export default function Page() {
           </p>
         </div>
       </div>
-
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <p className="text-gray-600 dark:text-gray-400">
@@ -27,8 +26,6 @@ export default function Page() {
           </p>
         </div>
       </div>
-
-
       <div className='columns md:columns-3 sm:columns-1'>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
@@ -51,8 +48,6 @@ export default function Page() {
             </p>
           </div>
         </div>
-
-
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
             <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
@@ -95,7 +90,6 @@ export default function Page() {
             </p>
           </div>
         </div>
-
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
             <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
@@ -131,14 +125,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-
       </div>
-
-
-
-
-
-
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
