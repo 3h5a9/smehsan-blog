@@ -23,7 +23,7 @@ export default function Page() {
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <p className="text-gray-600 dark:text-gray-400">
-            A brief description of my daily development environment and machine setup, which includes tools and techniques, i do use in my machine. As a diehard <span className="text-rose-400">linux</span> user i have been using it for last 7 years now as my primary OS and some times i do use windows as well. Curretly i am using a <span className="text-rose-400">Dell inspiron 15 3567</span> Laptop with 4GB of Ram and 1tb of HDD, though the configuration is quite low and old, i hope i am going to upgrade my machine in this month Insha Allah. On my machine i am running the most updated linux distro <span className="text-rose-400">Ubuntu (23.04)</span>, as i am a super fan of Ubuntu, although i have tried different distro, but ubuntu suites me the most.
+            {`A brief description of my daily development environment and machine setup, which includes tools and techniques, i do use in my machine. As a diehard <span className="text-rose-400">linux</span> user i have been using it for last 7 years now as my primary OS and some times i do use windows as well. Curretly i am using a <span className="text-rose-400">Dell inspiron 15 3567</span> Laptop with 4GB of Ram and 1tb of HDD, though the configuration is quite low and old, i hope i am going to upgrade my machine in this month Insha Allah. On my machine i am running the most updated linux distro <span className="text-rose-400">Ubuntu (23.04)</span>, as i am a super fan of Ubuntu, although i have tried different distro, but ubuntu suites me the most.`}
           </p>
         </div>
       </div>
@@ -41,14 +41,14 @@ export default function Page() {
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'Ruby on Rails'}
               </Link>
             </p>
             <p>
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'WordPress'}
               </Link>
@@ -68,35 +68,35 @@ export default function Page() {
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'HTML'}
               </Link>
             </p>
             <p>
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'CSS'}
               </Link>
             </p>
             <p className="text-gray-400 dark:text-gray-400">
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'React'}
               </Link>
             </p>
             <p>
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'SCSS'}
               </Link>
             </p>
             <p>
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'Bootstrap / Tailwind'}
               </Link>
@@ -115,23 +115,30 @@ export default function Page() {
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'Git - Version Control'}
               </Link>
             </p>
             <p>
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'Inkscape - Design'}
               </Link>
             </p>
             <p className="text-gray-400 dark:text-gray-400">
               <Link
-                href="/"
+                href={``}
                 className="text-gray-900 dark:text-gray-100">
                 {'Neovim - IDE'}
+              </Link>
+            </p>
+            <p>
+              <Link
+                href={``}
+                className="text-gray-900 dark:text-gray-100">
+                {''}
               </Link>
             </p>
           </div>
