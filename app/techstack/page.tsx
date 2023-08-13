@@ -65,16 +65,12 @@ export default function Page() {
               </Link>
             </p>
             <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'SCSS'}
               </Link>
             </p>
             <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Bootstrap / Tailwind'}
               </Link>
             </p>
@@ -86,31 +82,18 @@ export default function Page() {
               Tools
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Git - Version Control'}
               </Link>
             </p>
             <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Inkscape - Design'}
               </Link>
             </p>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Neovim - IDE'}
-              </Link>
-            </p>
-            <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
-                {''}
               </Link>
             </p>
           </div>
