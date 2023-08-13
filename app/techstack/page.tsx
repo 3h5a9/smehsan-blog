@@ -26,23 +26,19 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <div className='columns md:columns-3 sm:columns-1'>
+      <div className="columns md:columns-3 sm:columns-1">
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
             <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
               Back End
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Ruby on Rails'}
               </Link>
             </p>
             <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'WordPress'}
               </Link>
             </p>
@@ -54,23 +50,17 @@ export default function Page() {
               Front End
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100"> 
                 {'HTML'}
               </Link>
             </p>
             <p>
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'CSS'}
               </Link>
             </p>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link
-                href={``}
-                className="text-gray-900 dark:text-gray-100">
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'React'}
               </Link>
             </p>
