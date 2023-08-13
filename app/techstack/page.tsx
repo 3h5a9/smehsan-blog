@@ -32,11 +32,7 @@ export default function Page() {
       <div className='columns md:columns-3 sm:columns-1'>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
-            <h2 className="
-                        text-md font-extrabold 
-                        leading-9 tracking-tight text-gray-900 
-                        dark:text-gray-100 sm:text-2xl sm:leading-10 
-                        md:text-xl md:leading-14">
+            <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
               Back End
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
@@ -59,11 +55,7 @@ export default function Page() {
 
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
-            <h2 className="
-                        text-md font-extrabold 
-                        leading-9 tracking-tight text-gray-900 
-                        dark:text-gray-100 sm:text-2xl sm:leading-10 
-                        md:text-xl md:leading-14">
+            <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
               Front End
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
@@ -106,11 +98,7 @@ export default function Page() {
 
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-0">
-            <h2 className="
-                        text-md font-extrabold 
-                        leading-9 tracking-tight text-gray-900 
-                        dark:text-gray-100 sm:text-2xl sm:leading-10 
-                        md:text-xl md:leading-14">
+            <h2 className="text-md font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-xl md:leading-14">
               Tools
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
