@@ -50,7 +50,7 @@ export default function Page() {
               Front End
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
-              <Link href="/" className="text-gray-900 dark:text-gray-100"> 
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'HTML'}
               </Link>
             </p>
