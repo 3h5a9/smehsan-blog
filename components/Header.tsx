@@ -9,7 +9,7 @@ import SearchButton from './SearchButton'
 const Header = () => {
   return (
     <header className="">
-      <div className='flex items-center justify-between py-10'>
+      <div className="flex items-center justify-between py-10">
         <div>
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
@@ -35,9 +35,8 @@ const Header = () => {
           <MobileNav />
         </div>
       </div>
-      
       {/* Main Header Menu */}
-      <div className='mainMenu flex items-center justify-center py-10'>
+      <div className="mainMenu flex items-center justify-center py-10">
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => (
@@ -48,7 +47,7 @@ const Header = () => {
             >
               {link.title}
             </Link>
-        ))}
+          ))}
       </div>
     </header>
   )
