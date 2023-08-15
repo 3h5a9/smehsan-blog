@@ -10,14 +10,11 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest from blog
-          </h1>
+        {/* <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <p className="text-lg leading-7 text-rose-400 dark:text-gray-400">
             {siteMetadata.description}
           </p>
-        </div>
+        </div> */}
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {

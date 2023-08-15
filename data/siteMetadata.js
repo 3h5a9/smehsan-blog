@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'SM Ehsan Blog',
   author: 'SM Ehsan',
   headerTitle: 'SM Ehsan Blog',
-  description: 'Learning | Openion | Ruby on Rails && Linux',
+  description: 'Ruby on Rails && Linux && Openion',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://smehsan.vercel.app',
