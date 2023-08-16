@@ -23,7 +23,7 @@ In this tutorial we are going to use rbenv to install and ruby and ruby on raill
 
 ### Step -1 (Updat Ubuntu)
 ---
-At first lets update ubutu.
+At first lets update ubuntu.
 
 ```jsx
 sudo apt update
@@ -135,3 +135,84 @@ Ruby on rails use bundler to manage gem dependencies. so we need to install bund
 ```jsx
 gem install bundler
 ```
+
+
+
+### Step - 7 (Install Rails)
+If everything goes in a correct way, we can install rails now.
+
+```jsx
+gem install rails -v 7.0.4
+```
+or if you want you can istall the latest version with out any specific version.
+
+```jsx
+gem install rails
+```
+
+The output will be as follows
+
+```jsx
+Successfully installed rails-7.0.5
+35 gems installed
+```
+
+we can check the installed rails version with the following command.
+
+```jsx
+rails -v
+```
+
+The output will be as follows.
+
+`Rails 7.0.5`
+
+
+Now run the following command to work rbenv work properly.
+
+```jsx
+rbenv rehash
+```
+
+
+### Step - 8 (Configuring Git)
+Now we are going to configure our github account.
+Replace `my name` and `email address` in the following steps with the ones you used for your Github account.'
+
+```jsx
+git config --global color.ui true
+```
+```jsx
+git config --global user.name "my name"
+```
+```jsx
+git config --global user.email "myname@email.com"
+```
+```jsx
+ssh-keygen -t rsa -b 4096 -C "myname@email.com"
+```
+
+The next step is to take the newly generated SSH key and add it to your Github account.
+You have to copy and paste the output of the following command and paste it to github settings. "
+
+```jsx
+cat ~/.ssh/id_rsa.pub
+```
+The output will look like this.
+
+```jsx
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCKemFQLarQf/9CH0p/EYKRE+hhGyKkdjkajcuayH989kdgD8QUCkOEle3Re4D7Z4rmNbijk9jOvwGQIqsSuJ0vgN8Vpk3rRoWJcQ9tLSQh4bujBNFlzmJAakVEsen14raEluPCpH07SmhWspQguqaiADTPYxrdnQMEQrgKUWbkOfXUh/q5YHof68VB00SI3dF05deoisndcdi+GGZeywGbVBLMYsgnmSI8CSfYTsx2+9NSz147b8Lfk9h7mlA3hirYdKcvkqlimzNdaasdsadasdasdkjlkhuddjndwVf/XEuoktn9UEOiggVXH4BFcE9LaRwHTqwu1onVQMiigPNTGolwET13e2cH2CyLRkp/41MtuIoyKFAOyDp54PAbeN3W5FX8u0BjhyLgnNUL2IfTl6d58//enAjEnHSJo21kRRlZN7SZkMJbvNzkYciczuGoYubU8lpWf5uFbYKpNfHiGmaMQRmJhkjadlkYkmKMJ/4GTXsbqxF1jyQ6TgNQ2ZIeLzftZPaY1Qw6WZbz2UCvB9xh9jaCePQBu/JvANWGkO/IgGWJOgN/Lmk5J7mzuIghojwRF9JxNIQenQD7neCL+hL0CV0vuD+oBzDPn7b7VgJ2n7CUecfroriBDNR9NQZGyeFRhdqPs5G0YQ== myname@email.com
+```
+
+Now let's check and see if it worked. Type the following command in the terminal.
+
+```jsx
+ssh -T git@github.com
+```
+
+You will get a message like this:
+```jsx
+Hi excid3! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+
