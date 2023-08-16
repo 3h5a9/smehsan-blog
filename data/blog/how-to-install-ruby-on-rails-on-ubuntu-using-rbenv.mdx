@@ -267,7 +267,7 @@ postgres=# \password myname
 #### All Setup Done, lets create a new rails application now 😊😊😊.
 
 
-### Create New Rails App
+### Step - A (Create New Rails App)
 
 
 
@@ -287,18 +287,17 @@ rails new myapp -d mysql
 rails new myapp -d postgresql
 ```
 
-### Move into the application directory
+### Step - B (Move into the application directory)
 ```jsx
 cd myapp
 ```
 
-#### If you setup MySQL or Postgres with a username/password, modify the
-#### config/database.yml file to contain the username/password that you specified
+> If you setup MySQL or Postgres with a username/password, modify the config/database.yml file to contain the username/password that you specified.
 
-### Create the database
+### Step - C (Create the database)
 rake db:create
 
-Run the server.
+#### Step - D (Run the server.)
 ```jsx
 rails server
 ```
