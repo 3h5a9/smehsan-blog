@@ -9,7 +9,7 @@ import SearchButton from './SearchButton'
 const Header = () => {
   return (
     <header className="">
-      <div className="flex items-center justify-between py-10">
+      <div className="flex items-center justify-between py-10 sm:py-5">
         <div>
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
@@ -17,7 +17,7 @@ const Header = () => {
                 <Logo />
               </div>
               {typeof siteMetadata.headerTitle === 'string' ? (
-                <div className="niceclass h-6 text-2xl font-semibold sm:block">
+                <div className="hidden h-6 text-2xl font-semibold sm:block">
                   {siteMetadata.headerTitle}
                   <p className="text-sm leading-7 text-red-500 dark:text-gray-400">
                     {siteMetadata.description}
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
       </div>
       {/* Main Header Menu */}
-      <div className="mainMenu flex items-center justify-center py-10">
+      <div className="hidden md:flex mainMenu flex items-center justify-center py-10">
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => (
