@@ -19,7 +19,12 @@ summary: 'Ruby on Rails is a wondeful framework of of Ruby. And we to use this w
 
 In this tutorial we are going to use rbenv to install and ruby and ruby on raills.
 
-### Lest begin.
+
+### Let's Start 🚀
+The first step is to install some dependencies for Ruby and Rails.
+To make sure we have everything necessary to support Rails, we're first going to start by adding the Node.js and Yarn repositories to our system before installing them.
+
+
 
 ### Step -1 (Updat Ubuntu)
 ---
@@ -30,13 +35,23 @@ sudo apt update
 ```
 
 ### Step - 2 (Install CURL if not installed)
-
-
+---
 ```jsx
 sudo apt install curl
 ```
 
-Step -3 (Install Required Dependencies)
+### Step - 3 (Install Nodejs if not installed)
+```jsx
+sudo apt install nodejs
+```
+
+### Step - 4 (Add Yarn Package Manager)
+
+```jsx
+npm install --global yarn
+```
+
+Step - 5 (Install Required Dependencies)
 ---
 Now install require dependencies.
 
@@ -44,13 +59,13 @@ Now install require dependencies.
 sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 ```
 
-### Step - 4 (Install Rbenv)
+### Step - 6 (Install Rbenv)
 
 ```jsx
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 ```
 
-### Step - 5 (Add Path To Bash)
+### Step - 7 (Add Path To Bash)
 
 Now we need to add the rbenv path to bash.
 
@@ -78,7 +93,7 @@ source ~/.zshrc
 ```
 
 
-### Step - 5 (Install Ruby)
+### Step - 8 (Install Ruby)
 
 Lets check the version on Ruby.
 
@@ -133,7 +148,7 @@ rbenv rehash
 ```
 
 
-### Step - 6 (Install Bundler)
+### Step - 9 (Install Bundler)
 
 Ruby on rails use bundler to manage gem dependencies. so we need to install bundler.
 
@@ -143,7 +158,7 @@ gem install bundler
 
 
 
-### Step - 7 (Install Rails)
+### Step - 10 (Install Rails)
 If everything goes in a correct way, we can install rails now.
 
 ```jsx
@@ -180,7 +195,7 @@ rbenv rehash
 ```
 
 
-### Step - 8 (Configuring Git)
+### Step - 11 (Configuring Git)
 Now we are going to configure our github account.
 Replace `my name` and `email address` in the following steps with the ones you used for your Github account.'
 
@@ -221,4 +236,73 @@ You will get a message like this:
 Hi excid3! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+### Step - 12 (Setting Up A Database)
 
+Rails ships with sqlite3 as the default database. Chances are you won't want to use it because it's stored as a simple file on disk. You'll probably want something more robust like MySQL or PostgreSQL. There are lots of documentation on both, so just pick one that seems like you'll be more comfortable with.
+If you're new to Ruby on Rails or databases in general, I strongly recommend setting up PostgreSQL. If you're coming from PHP, you may already be familiar with MySQL.
+
+#### Install and Setup PostgreSQL latest version
+Run the following command to install Postgres and dependencies:
+
+```jsx
+sudo apt install postgresql libpq-dev
+```
+after completion of postgres installation we have to follow the next step.
+As postgres installation doesn't setup a user for you, so you'll need to follow these steps to create a user with permission to create databases. Feel free to replace myname with your username.
+
+```jsx
+sudo -u postgres createuser myname -s
+```
+
+If you would like to set a password for the user, you can do the following. this will open postgres in terminal.
+```jsx
+sudo -u postgres psql
+```
+
+now change the password by replace `\password` with your own password
+```jsx
+postgres=# \password myname
+```
+
+#### All Setup Done, lets create a new rails application now 😊😊😊.
+
+
+### Create New Rails App
+
+
+
+##### If you want to use SQLite (not recommended) run this command.
+```jsx
+rails new myapp
+```
+
+#### If you want to use MySQL run this command.
+```jsx
+rails new myapp -d mysql
+```
+
+#### If you want to use Postgres run this command.
+# Note that this will expect a postgres user with the same username
+# as your app, you may need to edit config/database.yml to match the
+# user you created earlier
+```jsx
+rails new myapp -d postgresql
+```
+
+### Move into the application directory
+```jsx
+cd myapp
+```
+
+#### If you setup MySQL or Postgres with a username/password, modify the
+#### config/database.yml file to contain the username/password that you specified
+
+### Create the database
+rake db:create
+
+Run the server.
+```jsx
+rails server
+```
+
+Hurray, Successfully Installed Rails and create your first ruby on rails app successfully! 🔥🔥🔥 🐧🐧🐧
