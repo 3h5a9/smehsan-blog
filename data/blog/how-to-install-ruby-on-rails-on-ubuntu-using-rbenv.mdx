@@ -126,6 +126,11 @@ The output will be something like as follows.
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 ```
 
+Now run the following command to work rbenv work properly.
+
+```jsx
+rbenv rehash
+```
 
 
 ### Step - 6 (Install Bundler)
@@ -142,7 +147,7 @@ gem install bundler
 If everything goes in a correct way, we can install rails now.
 
 ```jsx
-gem install rails -v 7.0.4
+gem install rails -v 7.0.5
 ```
 or if you want you can istall the latest version with out any specific version.
 
@@ -193,11 +198,12 @@ ssh-keygen -t rsa -b 4096 -C "myname@email.com"
 ```
 
 The next step is to take the newly generated SSH key and add it to your Github account.
-You have to copy and paste the output of the following command and paste it to github settings. "
 
 ```jsx
 cat ~/.ssh/id_rsa.pub
 ```
+
+Now we have to copy and paste the output and paste it to github settings. "
 The output will look like this.
 
 ```jsx
