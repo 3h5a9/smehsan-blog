@@ -21,7 +21,7 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-12">
-                <article>
+                <article className="border border-red-500 shadow-[3px_4px_rgba(239,68,68,1)] p-5 rounded">
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     {/* <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-red-500 dark:text-red-300">
