@@ -16,19 +16,19 @@ const Header = () => {
               <div className="mr-3">
                 <Logo />
               </div>
-              {typeof siteMetadata.headerTitle === 'string' ? (
-                <div className="hidden h-6 text-2xl font-semibold sm:block">
-                  {siteMetadata.headerTitle}
-                  <p className="text-sm leading-7 text-red-500 dark:text-gray-400">
-                    {siteMetadata.description}
-                  </p>
-                </div>
-              ) : (
-                siteMetadata.headerTitle
-              )}
             </div>
           </Link>
         </div>
+        {typeof siteMetadata.headerTitle === 'string' ? (
+          <Link href="/" className="hidden text-2xl font-semibold sm:flex sm:flex-col items-center">
+            <h6>{siteMetadata.headerTitle}</h6>
+            <p className="text-sm leading-7 text-red-500 dark:text-gray-400">
+              {siteMetadata.description}
+            </p>
+          </Link>
+        ) : (
+          siteMetadata.headerTitle
+        )}
         <div className="flex items-center leading-5 space-x-4 sm:space-x-6">
           <SearchButton />
           <ThemeSwitch />
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
       </div>
       {/* Main Header Menu */}
-      <div className="hidden md:flex mainMenu flex items-center justify-center py-10">
+      <div className="hidden md:flex mainMenu flex items-center justify-center py-5">
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => (
