@@ -1,0 +1,70 @@
+---
+title: 'How to use heroku postgres datasabe locally.'
+date: '2023-08-18'
+tags: ['Ruby on Rails', 'Heroku', 'Tuts']
+draft: false
+summary: 'When we work a project that is deployed on heroku, we need do use database locally. And heroku give the the option to download the database file as a dump file and use that on our local machine. In this tutorial we will see how we can download the database from heroku and use that in our development environment. lets get started.'
+---
+
+
+When we work a project that is deployed on heroku, we need do use database locally. And heroku give the the option to download the database file as a dump file and use that on our local machine. In this tutorial we will see how we can download the database from heroku and use that in our development environment.
+Let's Start 🚀
+
+
+### Step -1 (Login to heroku)
+The First Step is to login into heroku from local machine with heroku cli.
+```jsx
+heroku login
+```
+
+#### Step - 2 (Capture and Download Backup with PGBackups)
+
+To export the data from your Heroku Postgres database, we need to create a backup and download it to our local machine:
+we can do that with the following command.
+
+#### Capture the data of our application
+```jsx
+heroku pg:backups:capture --app example-app
+```
+
+#### Download the captured data
+```jsx
+  heroku pg:backups:download --app example-app
+```
+
+> replace your app name with `example-app`
+
+with this a new file will be downloaded to your local machine, the file name will be something like `latest.dump`.
+
+
+### Step - 3 (Drop and recreate your existing database)
+No we need to reset our local databases. run the following to command to reset.
+
+```jsx
+rails db:drop
+```
+```jsx
+rails db:create
+```
+
+### Step - 4 (Restore the database)
+With the pg_restore tool we will restore the database to our app.
+
+```jsx
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -d mydatabase_development latest.dump
+```
+This will ask for the postgres database password. provide the pasword. and bang!
+
+`mydatabase_development` is your local database name, you can get that inside `config/database.yml` file.
+
+change `mydatabase_development` with your database name.
+
+### Step - 5 (Run Migration )
+Now rum rails migration
+```jsx
+rails db:migrate
+```
+
+##### It's all done. Now run the application. and all the data will be in your local site 😊😊😊.
+
+Thank You.
