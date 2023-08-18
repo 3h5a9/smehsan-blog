@@ -42,6 +42,16 @@ export default function Page() {
                 {'WordPress'}
               </Link>
             </p>
+            <p>
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
+                {'Postgres'}
+              </Link>
+            </p>
+            <p>
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
+                {'MySql'}
+              </Link>
+            </p>
           </div>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -51,12 +61,12 @@ export default function Page() {
             </h2>
             <p className="text-gray-400 dark:text-gray-400">
               <Link href="/" className="text-gray-900 dark:text-gray-100">
-                {'HTML'}
+                {'HTML 5'}
               </Link>
             </p>
             <p>
               <Link href="/" className="text-gray-900 dark:text-gray-100">
-                {'CSS'}
+                {'CSS 3'}
               </Link>
             </p>
             <p className="text-gray-400 dark:text-gray-400">
@@ -84,6 +94,11 @@ export default function Page() {
             <p className="text-gray-400 dark:text-gray-400">
               <Link href="/" className="text-gray-900 dark:text-gray-100">
                 {'Git - Version Control'}
+              </Link>
+            </p>
+            <p>
+              <Link href="/" className="text-gray-900 dark:text-gray-100">
+                {'NPM / Yarn'}
               </Link>
             </p>
             <p>

@@ -1,18 +1,14 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
+    title: 'Tenant Management System',
+    description: `This application was build to manager multiple tenant of a home. Home owner can easily manage rents, utility bills, Dues of rent, Auto generated invoice and many more functionality. Build with Ruby on Rails, Javascript and Bootstrap.`,
+    imgSrc: '/static/images/backup-image.png',
     href: 'https://www.google.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
+    title: 'Appointment Management System',
+    description: `This application was build for a hospital. where international and local patient can manage appointment. User can book appointment online. It is build with Ruby on Rails, Bootstrap and JavaScript.`,
+    imgSrc: '/static/images/backup-image.png',
     href: '/blog/the-time-machine',
   },
 ]
