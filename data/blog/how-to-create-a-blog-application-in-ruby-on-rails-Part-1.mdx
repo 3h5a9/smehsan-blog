@@ -1,0 +1,104 @@
+---
+  title: 'How to create a blog application in ruby on rails. (Part - 1)'
+  date: '2023-08-23'
+  tags: ['Ruby on Rails','Tuts']
+  draft: false
+  summary: 'Hello and welcome. Ruby on Rails is one of the most easiest and superfast ruby framework, that we can use to make any web application. Its convention over configuration paradigm, application of dry method and MVC architectural pattern give it a unique strength to build an application swiftly and in a short period of time.'
+---
+
+
+Hello and welcome. Ruby on Rails is one of the most easiest and superfast ruby framework, that we can use to make any web application. Its ***convention over configuration*** paradigm, application of ***dry method*** and ***MVC*** architectural pattern give it a unique strength to build an application swiftly and in a short period of time. 
+
+![/static/images/mvc.jpg](mvc)
+*MVC Architecture*
+
+
+![/static/images/coc.png](coc)
+*DRY and Convention Over Configuration*
+
+RoR does a huge amount of task behind the scene. If you follow some convention, then you can avoid a lot of configuration for your application. Because rails will do those properly and in a structured way for you. This is called ***convention over configuration*** 
+
+With the combination of these paradigm and architecture we can build an web application easily and within short time. Lets try to build a ***blog*** application with *ruby on rails*. 
+
+We are going to use
+- Ruby 3.2.2
+- Ruby on Rails 7
+- ES Build
+- [Simple CSS](https://simplecss.org/)
+---
+
+### **Step -1(Crete a new rails app)**
+---
+Open terminal and run the following command.
+```
+rails new myblog -d postgresql
+```
+Now elaborate this line of command. 
+`rails new` - saying create new rails app.
+`myblog` - is the application name that we are going to make.
+`-d postgres` - is defining the database that we are going to use. In my case i am using postgresql,  so i define `postgresql`. If you want to use mysql, then replace `postgresql` to `mysql`.
+
+This will generate the whole application. Now lest go inside the application folder. Run `cd myapp` 
+
+### **Step -2(create database and run app)**
+At this stage we need to create the database for our app. To generate the database run the following command in terminal.
+```
+rails db:create
+```
+This will create two database for use.
+```
+myapp_development
+myapp_test
+```
+We can check our created database inside  `config` folder and `database.yml` file.
+`config/database.yml` 
+Now run 
+```
+rails server
+```
+This will run the rails server.
+
+Now go to browser and check app on browser.
+```
+127.0.0.1:3000
+```
+
+
+![/static/images/deploy.jpg](deploy)
+
+**Perfect!**
+
+
+
+### **Step -3(create article for blog)**
+Now lets create article for our blog. For now our article will consist of
+- A title.
+- Description.
+
+Run the following command in terminal. Believe me this is be a magic. Only one line of code and you will get everything for your article. Leta do it.
+```
+rails generate scaffold title:string descriotion:text
+```
+
+Great.
+Now lets break it down. 
+`rails generate ` - This is the besic command of rails to generate something. 
+`scaffold` - will generate a predefined set of files, that will create the basic structure of the project. 
+`title:string` - As we need two components,  and title is one of them. And the data type of title will be string. That means the max length will be 255 characters.
+`description:text` - The second component is description. And we give it a data type of text. As description is always longer. And a data type of text can store upto 65,535 characters.
+
+Now lets migrate our database.
+```
+rails db:migrate
+```
+Rails active record migration is another wonderful feature that enable user to make changes to database schema without writing any sql query. Just run the command and rails will do the rest. We can check the changes in schema file inside db folder.
+
+Now if we go to the following url we can see the structure of our article.
+```
+127.0.0.1:3000/articles
+```
+
+
+---
+Congratulations,
+We have successfully created our blog application.
