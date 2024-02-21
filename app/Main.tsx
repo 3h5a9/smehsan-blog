@@ -21,7 +21,7 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-12">
-                <article className="border border-red-500 shadow-[3px_4px_rgba(239,68,68,1)] p-5 rounded">
+                <article className="border border-black dark:border-white shadow-[3px_4px] p-5">
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     {/* <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-red-500 dark:text-red-300">
@@ -52,7 +52,7 @@ export default function Home({ posts }) {
                       <div className="text-base font-medium leading-6 flex justify-between">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-red-500 hover:text-rose-600 dark:hover:text-red-400"
+                          className=""
                           aria-label={`Read "${title}"`}
                         >
                           Read more &rarr;
@@ -73,7 +73,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-red-500 hover:text-red-500 dark:hover:text-red-400"
+            className=""
             aria-label="All posts"
           >
             All Posts &rarr;

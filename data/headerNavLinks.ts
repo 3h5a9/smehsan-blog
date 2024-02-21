@@ -1,10 +1,9 @@
 const headerNavLinks = [
-  { href: '/', title: 'Home' },
+  { href: 'https://www.smehsan.com/', title: 'Home' },
   { href: '/blog', title: 'Blog' },
-  { href: '/tags', title: 'Tags' },
-  { href: '/projects', title: 'Projects' },
-  { href: '/about', title: 'About' },
-  { href: '/techstack', title: 'My Tech Stack' }
+  { href: 'https://www.smehsan.com/portfolio', title: 'Portfolio' },
+  { href: 'https://www.smehsan.com/about', title: 'About' },
+  { href: 'https://www.smehsan.com/contact', title: 'Contact' }
 ]
 
 export default headerNavLinks

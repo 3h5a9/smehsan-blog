@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="">
       <div className="flex items-center justify-between py-10 sm:py-5">
-        <div>
+        {/* <div>
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
               <div className="mr-3">
@@ -18,11 +18,11 @@ const Header = () => {
               </div>
             </div>
           </Link>
-        </div>
+        </div> */}
         {typeof siteMetadata.headerTitle === 'string' ? (
-          <Link href="/" className="hidden text-2xl font-semibold sm:flex sm:flex-col items-center">
+          <Link href="/" className="hidden text-2xl font-semibold sm:flex sm:flex-col">
             <h6>{siteMetadata.headerTitle}</h6>
-            <p className="text-sm leading-7 text-red-500 dark:text-gray-400">
+            <p className="text-sm leading-7">
               {siteMetadata.description}
             </p>
           </Link>
@@ -43,7 +43,7 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className="hidden rounded hover:bg-red-500 hover:text-gray-100 sm:block font-medium text-gray-900 dark:text-gray-100 mx-3 px-3 py-1"
+              className="hidden text-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black sm:block font-medium mx-3 px-3 py-1"
             >
               {link.title}
             </Link>
