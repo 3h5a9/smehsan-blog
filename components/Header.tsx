@@ -22,9 +22,7 @@ const Header = () => {
         {typeof siteMetadata.headerTitle === 'string' ? (
           <Link href="/" className="hidden text-2xl font-semibold sm:flex sm:flex-col">
             <h6>{siteMetadata.headerTitle}</h6>
-            <p className="text-sm leading-7">
-              {siteMetadata.description}
-            </p>
+            <p className="text-sm leading-7">{siteMetadata.description}</p>
           </Link>
         ) : (
           siteMetadata.headerTitle

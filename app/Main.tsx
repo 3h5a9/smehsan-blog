@@ -50,11 +50,7 @@ export default function Home({ posts }) {
                         </div>
                       </div>
                       <div className="text-base font-medium leading-6 flex justify-between">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className=""
-                          aria-label={`Read "${title}"`}
-                        >
+                        <Link href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                           Read more &rarr;
                         </Link>
                         <span>
@@ -71,11 +67,7 @@ export default function Home({ posts }) {
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
-          <Link
-            href="/blog"
-            className=""
-            aria-label="All posts"
-          >
+          <Link href="/blog" className="" aria-label="All posts">
             All Posts &rarr;
           </Link>
         </div>

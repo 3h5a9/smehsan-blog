@@ -77,10 +77,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <dt className="sr-only">Twitter</dt>
                         <dd>
                           {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className=""
-                            >
+                            <Link href={author.twitter} className="">
                               {author.twitter.replace('https://twitter.com/', '@')}
                             </Link>
                           )}
@@ -110,9 +107,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide">
-                      Tags
-                    </h2>
+                    <h2 className="text-xs uppercase tracking-wide">Tags</h2>
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
@@ -124,9 +119,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && prev.path && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide">
-                          Previous Article
-                        </h2>
+                        <h2 className="text-xs uppercase tracking-wide">Previous Article</h2>
                         <div className="">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
                         </div>
@@ -134,9 +127,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     )}
                     {next && next.path && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide">
-                          Next Article
-                        </h2>
+                        <h2 className="text-xs uppercase tracking-wide">Next Article</h2>
                         <div className="">
                           <Link href={`/${next.path}`}>{next.title}</Link>
                         </div>
@@ -146,11 +137,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 )}
               </div>
               <div className="pt-4 xl:pt-8">
-                <Link
-                  href={`/${basePath}`}
-                  className=""
-                  aria-label="Back to the blog"
-                >
+                <Link href={`/${basePath}`} className="" aria-label="Back to the blog">
                   &larr; Back to the blog
                 </Link>
               </div>

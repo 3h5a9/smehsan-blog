@@ -60,11 +60,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
               )}
               {next && next.path && (
                 <div className="pt-4 xl:pt-8">
-                  <Link
-                    href={`/${next.path}`}
-                    className=""
-                    aria-label={`Next post: ${next.title}`}
-                  >
+                  <Link href={`/${next.path}`} className="" aria-label={`Next post: ${next.title}`}>
                     {next.title} &rarr;
                   </Link>
                 </div>
