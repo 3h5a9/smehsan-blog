@@ -78,13 +78,13 @@ export default function ListLayoutWithTags({
   return (
     <>
       <div>
-        <div className="pb-6 pt-6">
+        {/* <div className="pb-6 pt-6">
           <h1 className="sm:hidden text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
-        </div>
+        </div> */}
         <div className="flex sm:space-x-24">
-          <div className="hidden max-h-screen h-full sm:flex flex-wrap bg-gray-50 dark:bg-gray-900/70 shadow-md pt-5 dark:shadow-gray-800/40 rounded min-w-[280px] max-w-[280px]">
+          {/* <div className="hidden max-h-screen h-full sm:flex flex-wrap bg-gray-50 dark:bg-gray-900/70 shadow-md pt-5 dark:shadow-gray-800/40 rounded min-w-[280px] max-w-[280px]">
             <div className="py-4 px-6">
               {pathname.startsWith('/blog') ? (
                 <h3 className="font-bold uppercase">All Posts</h3>
@@ -118,17 +118,17 @@ export default function ListLayoutWithTags({
                 })}
               </ul>
             </div>
-          </div>
+          </div> */}
           <div>
             <ul>
               {displayPosts.map((post) => {
                 const { path, date, title, summary, tags } = post
                 return (
                   <li key={path} className="py-5">
-                    <article className="space-y-2 flex flex-col xl:space-y-0">
+                    <article className="space-y-2 flex flex-col xl:space-y-0 border border-black p-5">
                       <dl>
                         <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <dd className="text-xs font-medium leading-6 text-gray-500 dark:text-gray-400">
                           <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                         </dd>
                       </dl>
@@ -139,12 +139,13 @@ export default function ListLayoutWithTags({
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap">
-                            {tags?.map((tag) => <Tag key={tag} text={tag} />)}
-                          </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                           {summary}
+                        </div>
+                        <div className="border-t border-black"></div>
+                        <div className="flex flex-wrap">
+                          {tags?.map((tag) => <Tag key={tag} text={tag} />)}
                         </div>
                       </div>
                     </article>

@@ -20,7 +20,7 @@ const Header = () => {
           </Link>
         </div> */}
         {typeof siteMetadata.headerTitle === 'string' ? (
-          <Link href="/" className="hidden text-2xl font-semibold sm:flex sm:flex-col">
+          <Link href="/" className="text-2xl font-semibold sm:flex sm:flex-col">
             <h6>{siteMetadata.headerTitle}</h6>
             <p className="text-sm leading-7">{siteMetadata.description}</p>
           </Link>
@@ -34,7 +34,7 @@ const Header = () => {
         </div>
       </div>
       {/* Main Header Menu */}
-      <div className="hidden md:flex mainMenu flex items-center justify-center py-5">
+      {/* <div className="hidden md:flex mainMenu flex items-center justify-center py-5">
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => (
@@ -46,7 +46,7 @@ const Header = () => {
               {link.title}
             </Link>
           ))}
-      </div>
+      </div> */}
     </header>
   )
 }
