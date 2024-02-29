@@ -20,9 +20,9 @@ const Header = () => {
           </Link>
         </div> */}
         {typeof siteMetadata.headerTitle === 'string' ? (
-          <Link href="/" className="text-2xl font-semibold sm:flex sm:flex-col">
+          <Link href="https://smehsan.com" className="text-2xl font-semibold sm:flex sm:flex-col">
             <h6>{siteMetadata.headerTitle}</h6>
-            <p className="text-sm leading-7">{siteMetadata.description}</p>
+            {/* <p className="text-sm leading-7">{siteMetadata.description}</p> */}
           </Link>
         ) : (
           siteMetadata.headerTitle
