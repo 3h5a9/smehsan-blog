@@ -1,0 +1,160 @@
+---
+title: Handling User Timezones in Ruby on Rails: A Comprehensive Guide
+date: '2024-08-08'
+tags: ['TimeZone', 'ruby-on-rails', 'features']
+draft: false
+summary: This guide will walk you through the process of adding timezone support to your Ruby on Rails application. We’ll cover everything from updating the user model to handling timezone data in forms, and finally formatting timestamps in a user-friendly manner.
+---
+
+
+
+## Handling User Timezones in Ruby on Rails: A Comprehensive Guide
+
+![coc](/static/images/ruby_on_rails_time_zone.jpeg)
+
+In a globalized world where users span multiple time zones, it’s essential for applications to display time data in a way that feels intuitive and relevant to each user. Properly managing and displaying time based on a user's local timezone can greatly enhance the usability and professionalism of your application.
+
+Ruby on Rails, with its robust time handling capabilities, provides the tools needed to make this possible. However, integrating timezone support involves several steps, including capturing user preferences, storing these preferences, and ensuring that all time-related data is displayed accurately according to the user's timezone.
+
+This guide will walk you through the process of adding timezone support to your Ruby on Rails application. We’ll cover everything from updating the user model to handling timezone data in forms, and finally formatting timestamps in a user-friendly manner. By following these steps, you will ensure that your application delivers a consistent and personalized experience for users around the world.
+
+We will focus on:
+
+- Adding and managing a timezone attribute in your user model.
+- Allowing users to select and update their timezone through Devise forms.
+- Converting and displaying timestamps in a format that includes AM/PM notation, adapted to each user’s local timezone.
+
+```javascript
+Whether you are building a new feature or enhancing an existing one, this guide will provide the necessary steps to integrate timezone support seamlessly into your Ruby on Rails application.
+```
+
+### Adding Timezone Support to Your Rails Application
+
+#### 1. **Add a Timezone Column to the User Model**
+
+First, you need to add a `timezone` column to the `users` table. This allows each user to have a personalized timezone setting.
+
+Generate a migration:
+
+```javascript
+rails generate migration AddTimezoneToUsers timezone:string
+rails db:migrate
+```
+
+#### 2. **Permit the Timezone Parameter in Devise**
+
+To allow Devise to handle the `timezone` parameter during sign-up and profile updates, override the `RegistrationsController`:
+
+Generate the controller if you haven’t already:
+
+```javascript
+rails generate devise:controllers users
+```
+
+Update `app/controllers/users/registrations_controller.rb`:
+
+```ruby
+class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
+
+  protected
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:timezone])
+  end
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:timezone])
+  end
+end
+```
+
+#### 3. **Update Your Routes**
+
+Ensure your routes use the custom controller:
+
+```ruby
+devise_for :users, controllers: {
+  registrations: 'users/registrations'
+}
+```
+
+#### 4. **Add Timezone Selection to Forms**
+
+**Sign-Up Form**
+Modify `app/views/devise/registrations/new.html.erb` to include a timezone dropdown:
+
+```erb
+<div class="field">
+  <%= f.label :timezone %><br />
+  <%= f.select :timezone, ActiveSupport::TimeZone.all.map { |tz| [tz.name, tz.name] }, {}, class: "form-control" %>
+</div>
+```
+
+**Edit Profile Form**
+Similarly, update `app/views/devise/registrations/edit.html.erb`:
+
+```erb
+<div class="field">
+  <%= f.label :timezone %><br />
+  <%= f.select :timezone, ActiveSupport::TimeZone.all.map { |tz| [tz.name, tz.name] }, {}, class: "form-control" %>
+</div>
+```
+
+#### 5. **Apply User’s Timezone Throughout the Application**
+
+Add a method to your `ApplicationController` to use the user’s timezone:
+
+```ruby
+class ApplicationController < ActionController::Base
+  around_action :set_time_zone
+
+  private
+
+  def set_time_zone(&block)
+    timezone = current_user.try(:timezone) || 'UTC'
+    Time.use_zone(timezone, &block)
+  end
+end
+```
+
+### Displaying Timestamps in a User-Friendly Format
+
+To ensure that timestamps are displayed in a readable format with AM/PM notation:
+
+#### 1. **Format the Time with AM/PM**
+
+Use `strftime` to format the timestamp in your views. For example:
+
+```erb
+<td><%= click.created_at.in_time_zone(current_user.timezone).strftime("%Y-%m-%d %I:%M:%S %p") %></td>
+```
+
+This will display timestamps in the format:
+
+```
+2024-08-03 02:37:40 AM
+```
+
+#### 2. **Example Code**
+
+Here’s how you would incorporate this into your view:
+
+```erb
+<td><%= click.created_at.in_time_zone(current_user.timezone).strftime("%Y-%m-%d %I:%M:%S %p") %></td>
+```
+
+### Committing Your Changes
+
+To document these changes in your version control, use a clear and descriptive commit message.
+
+### Summary
+
+Handling user timezones in a Rails application involves:
+1. Adding a `timezone` attribute to the `users` model.
+2. Permitting and handling timezone parameters in Devise.
+3. Displaying timestamps in a user-friendly format, including AM/PM notation.
+
+By following these steps, you enhance user experience by ensuring that times are displayed according to each user's local timezone and in an easily readable format.
+
